@@ -33,29 +33,23 @@ Write the detailed procedure here
 
 
 ## Program:
+
+## Half subtractor:
 ```
-Half subtractor:
-
-module halfsub(output b,d,input x,y);
-
+module halfsub(b,d,x,y);
+input x,y
+output b,d
 assign d=(x^y);
-
 assign b=(~x&y);
-
 endmodule
-
-Full subtractor:
-
+```
+## Full subtractor:
+```
 module fullsub(x,y,z,b,d);
-
 input x,y,z;
-
 output b,d;
-
 assign d=(x^y^z);
-
 assign b=(~x&(y^z)|(y&z));
-
 endmodule
 ```
 /*
