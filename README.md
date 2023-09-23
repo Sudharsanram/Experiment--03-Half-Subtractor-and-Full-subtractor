@@ -36,20 +36,20 @@ Write the detailed procedure here
 
 ## Half subtractor:
 ```
-module halfsub(b,d,x,y);
-input x,y
-output b,d
-assign d=(x^y);
-assign b=(~x&y);
-endmodule
+module halfsub(a,b,di,bo);
+input a,b;
+output di,bo;
+assign di=(a^b);
+assign bo=((~a)&b);
+endmodule 
 ```
 ## Full subtractor:
 ```
-module fullsub(x,y,z,b,d);
-input x,y,z;
-output b,d;
-assign d=(x^y^z);
-assign b=(~x&(y^z)|(y&z));
+module fs(a,b,bin,di,bo);
+input a,b,bin;
+output di,bo;
+assign di=a^b^bin;
+assign bo=((~a&b))|(b&bin)|((~a)&bin);
 endmodule
 ```
 /*
